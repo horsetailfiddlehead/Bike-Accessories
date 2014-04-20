@@ -1,0 +1,3 @@
+group() {
+	import(file = "d:/School/Senior/Spring/capstone/Bike-Accessories/Bar_Caps.stl", layer = "", origin = [0, 0], scale = 1, convexity = 1, $fn = 0, $fa = 12, $fs = 2, timestamp = 1397196610);
+}
