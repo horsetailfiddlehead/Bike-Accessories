@@ -38,9 +38,9 @@ module lowerBracket(ID){
 			union() {
 #rotate([90, 0, 0])
 				cylinder(h=2* ID, r=ID/2, center=true);
-#translate([0, 17.2, 14-ID]) 
-rotate([0,90,0]) 
-cylinder(h=baseW+0.1, r=10, center=true);
+#translate([0, 18.5, 14.5-ID]) 
+				rotate([0,90,0]) 
+					cylinder(h=baseW+0.1, r=11, center=true);
 			}
 		}
 }
@@ -65,17 +65,21 @@ module mountBase() {
 		union() {
 			// create the slots
 			for (i = [0,1]) {
-# translate([(0.1)*(i-1) + i*(baseTang + slotW), -0.25, 2]) 
+#translate([(0.1)*(i-1) + i*(baseTang + slotW), -0.25, 2]) 
 				cube([ slotW+0.1, baseL + 0.5, baseH - lipH]);
 			}
 
 			// create the locking hole
 # translate([(baseW - lockW)/2, 30, -0.1])
 			cube([lockW, lockL, totalH + 0.2]); 
+
+			// bevel front of top
+#translate([baseW/2, 0.75*baseL-1.4, 1.5*baseH+0.1]) 
+			rotate([0, 90, 0]) rotate(60)
+				cube([5, 3, baseW+0.1], center=true);
 		}
 	}
 }
 
 mountBase();
 translate([baseW /2, 7, totalH]) lowerBracket(25);
-//lowerBracket(25);
