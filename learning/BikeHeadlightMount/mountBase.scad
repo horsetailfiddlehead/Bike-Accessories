@@ -1,9 +1,9 @@
 /*
-Object: Bicycle headlight mount
-Creator: Patrick Ma
-Date started: 5/33/2014
-Date completed: 
-This is only the lower half of the bracket
+* Object: Bicycle headlight mount
+* Creator: Patrick Ma
+* Date started: 5/33/2014
+* Date completed: 
+* This is only the lower half of the bracket
 */
 
 
@@ -19,31 +19,6 @@ totalH = 1.5*baseH;// The total height of the base bracket
 // locking hole
 lockW = 4;	
 lockL = 3;
-
-/* 
- * Creates the lower bracket for the light proper
- * ID: inner diameter of bracket -- aka the outer dia of the light
- */
-module lowerBracket(ID){
-	verticalOffset = 1.0*(ID-5);
-	translate([0, 0, verticalOffset])
-		difference() {
-			// Adds
-			union() {	//TODO use resize to better fit the screws
-				resize([ID + 18.35, 20, ID + 10]) sphere(10); // forms the bracket body
-				translate([-0.5*baseW, -7, -1*(ID-5)]) // attach to mountBase
-					cube([baseW, 20, 10]);
-			}
-			// subtracts
-			union() {
-#rotate([90, 0, 0])
-				cylinder(h=2* ID, r=ID/2, center=true);
-#translate([0, 18.5, 14.5-ID]) 
-				rotate([0,90,0]) 
-					cylinder(h=baseW+0.1, r=11, center=true);
-			}
-		}
-}
 
 
 /*
@@ -81,5 +56,5 @@ module mountBase() {
 	}
 }
 
-mountBase();
-translate([baseW /2, 7, totalH]) lowerBracket(25);
+//mountBase();
+//translate([baseW /2, 7, totalH]) lowerBracket(25);
