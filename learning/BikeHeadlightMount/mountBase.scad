@@ -17,8 +17,8 @@ lipH = 2;
 totalH = 1.5*baseH;// The total height of the base bracket
 
 // locking hole
-lockW = 4;	
-lockL = 3;
+lockW = 5;	
+lockL = 4;
 
 
 /*
@@ -52,9 +52,10 @@ module mountBase() {
 #translate([baseW/2, 0.75*baseL-1.4, 1.5*baseH+0.1]) 
 			rotate([0, 90, 0]) rotate(60)
 				cube([5, 3, baseW+0.1], center=true);
+
 		}
 	}
 }
 
-//mountBase();
+mountBase();
 //translate([baseW /2, 7, totalH]) lowerBracket(25);

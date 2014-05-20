@@ -13,4 +13,5 @@ include <mountBase.scad>
 include <lowerBracket.scad>
 
 mountBase();
-translate([baseW /2, 7, totalH]) lowerBracket(25);
+translate([baseW /2, 7, totalH]) lowerBracket(25, true);
+//translate([baseW /2, 7, totalH]) lowerBracket(25, false);
