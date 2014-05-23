@@ -53,6 +53,14 @@ module mountBase() {
 			rotate([0, 90, 0]) rotate(60)
 				cube([5, 3, baseW+0.1], center=true);
 
+// test holes
+translate([baseW/4, baseL/2, 0]) cylinder(d=7, h=20, $fn=6, center=true);
+translate([baseW/4, baseL/4, 0]) cylinder(d=7.6, h=20, $fn=6, center=true);
+// screw hole
+					translate([3*baseW/4, baseL/4, 0])cylinder(d=4.3, h=40, $fn=20, center=true);
+
+					// Countersunk bolt head
+					translate([3*baseW/4, baseL/2])cylinder(d=7, h = 20, $fn=20, center=true);
 		}
 	}
 }
